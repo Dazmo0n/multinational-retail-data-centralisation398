@@ -12,7 +12,7 @@ if __name__ == "__main__":
     if creds:
         # Initialize DatabaseConnector object with credentials
         connector = DatabaseConnector(
-            dbname=creds['RDS_DATABASE'],
+            database=creds['RDS_DATABASE'],
             user=creds['RDS_USER'],
             password=creds['RDS_PASSWORD'],
             host=creds['RDS_HOST'],

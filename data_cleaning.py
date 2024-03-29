@@ -107,26 +107,4 @@ class DataCleaning:
 
         return cleaned_df
 
-# Example usage:
-if __name__ == "__main__":
-    # Instantiate the DataCleaning class
-    cleaner = DataCleaning()
 
-    # Example CSV data cleaning
-    csv_file_path = "example.csv"
-    cleaned_csv_data = cleaner.clean_csv_data(csv_file_path)
-    print("Cleaned CSV data:")
-    print(cleaned_csv_data)
-
-    # Example API data cleaning
-    api_data = [{"id": 1, "name": "Product A", "price": 100, "date": "2022-01-01"},
-                {"id": 2, "name": "Product B", "price": 200, "date": "2022-01-02"}]
-    cleaned_api_data = cleaner.clean_api_data(api_data)
-    print("Cleaned API data:")
-    print(cleaned_api_data)
-
-    # Example S3 data cleaning
-    s3_data = ["data1", "data2", "data3", None, "data4"]
-    cleaned_s3_data = cleaner.clean_s3_data(s3_data)
-    print("Cleaned S3 data:")
-    print(cleaned_s3_data)
