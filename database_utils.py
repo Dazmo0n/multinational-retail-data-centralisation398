@@ -37,7 +37,7 @@ class DatabaseConnector:
         """
         try:
             # Initialize database engine
-            engine = self._init_db_engine("credentials.yaml")
+            engine = self.init_db_engine("db_creds.yaml")
             
             # Upload DataFrame to database table
             df.to_sql(table_name, engine, if_exists='replace', index=False)

@@ -5,6 +5,7 @@ import requests
 from sqlalchemy import create_engine
 import pandas as pd
 from database_utils import DatabaseConnector
+import yaml
 
 class DataExtractor:
     def __init__(self):

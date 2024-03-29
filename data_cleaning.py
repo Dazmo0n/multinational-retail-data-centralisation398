@@ -91,11 +91,14 @@ class DataCleaning:
         # Convert date columns to datetime type, handle errors with dates
         date_columns = ['date_of_birth', 'registration_date']
         for col in date_columns:
-            try:
-                cleaned_df[col] = pd.to_datetime(cleaned_df[col])
-            except ValueError as e:
-                print(f"Error converting {col} to datetime: {e}")
-                # You can handle errors here, e.g., setting the problematic dates to NaN
+            if col in cleaned_df.columns:
+                try:
+                    cleaned_df[col] = pd.to_datetime(cleaned_df[col])
+                except ValueError as e:
+                    print(f"Error converting {col} to datetime: {e}")
+                    # You can handle errors here, e.g., setting the problematic dates to NaN
+            else:
+                print(f"Column '{col}' not found in DataFrame.")
 
         # Convert columns to the correct data type
         # Example: cleaned_df['age'] = cleaned_df['age'].astype(int)
